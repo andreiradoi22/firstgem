@@ -6,18 +6,10 @@ require_relative "test_are/version"
 module TestAre
   class Error < StandardError; end
 
-  def self.convert(amount, from:, to:)
-    case from
-    when :mi
-      case to
-      when :km
-        amount * 1.609344
-      end
-    when :km
-      case to
-      when :mi
-        amount / 1.609344
-      end
+  def self.my_diff(list_of_elements, elem:)
+    list_of_elements.each do |_key, value|
+      list_of_elements.delete(elem.key(value))
+      p self
     end
   end
 end
